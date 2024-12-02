@@ -59,12 +59,7 @@ fn check_level(data: &VecDeque<i32>, remove_level: Option<usize>) -> bool {
         .zip(shift_data)
         .map(|(a, b)| a - b)
         .collect::<Vec<i32>>();
-    if subtract.iter().all(|x| x >= &1 && x <= &3) || subtract.iter().all(|x| x <= &-1 && x >= &-3)
-    {
-        true
-    } else {
-        false
-    }
+    subtract.iter().all(|x| x >= &1 && x <= &3) || subtract.iter().all(|x| x <= &-1 && x >= &-3)
 }
 
 #[cfg(test)]
